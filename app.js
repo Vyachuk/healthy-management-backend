@@ -24,7 +24,7 @@ app.use((err, req, res, next) => {
   res.status(status).json({ message });
 });
 
-//
+// TELEGRAM BOT
 const TelegramBot = require("node-telegram-bot-api");
 
 require("dotenv").config();
@@ -38,9 +38,18 @@ const bot = new TelegramBot(process.env.TELEGRAM_API_KEY, {
 bot.on("polling_error", (err) => console.log(err.data.error.message));
 
 bot.on("text", async (msg) => {
-  console.log(msg.chat.id);
-  await bot.sendMessage(msg.chat.id, msg.text);
+  try {
+    if (msg.text == "/start") {
+      await bot.sendMessage(
+        msg.chat.id,
+        `Вітаю, ви можете зв'язатись з Ольгою Поліщук поштою: managementhealthy@gmail.com`
+      );
+    } else if (msg.text == "/giveid") {
+      await bot.sendMessage(msg.chat.id, msg.chat.id);
+    }
+  } catch (error) {
+    console.log(error);
+  }
 });
-//
 
 module.exports = app;
