@@ -2,14 +2,14 @@ const express = require("express");
 
 const cors = require("cors");
 
-const sendEmail = require("./routes/api/sendEmail");
+const sendData = require("./routes/api/sendData");
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
-app.use("/api/sendemail", sendEmail);
+app.use("/api/senddata", sendData);
 
 app.use("/api/wakeup", (req, res, next) => {
   res.json({ message: true });

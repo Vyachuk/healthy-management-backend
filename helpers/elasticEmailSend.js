@@ -2,7 +2,7 @@ const ElasticEmail = require("@elasticemail/elasticemail-client");
 
 require("dotenv").config();
 
-const { ELASTIC_API_KEY, INBOX, FROM_MAIL } = process.env;
+const { ELASTIC_API_KEY, FROM_MAIL } = process.env;
 
 const defaultClient = ElasticEmail.ApiClient.instance;
 
@@ -11,21 +11,22 @@ apikey.apiKey = ELASTIC_API_KEY;
 
 const api = new ElasticEmail.EmailsApi();
 
-const sendDataToEmail = ({ name, email, phone, message }) => {
+const sendDataToEmail = ({ name, email, phone, comment, service }) => {
   const emailToSend = ElasticEmail.EmailMessageData.constructFromObject({
-    Recipients: [new ElasticEmail.EmailRecipient(INBOX)],
+    Recipients: [new ElasticEmail.EmailRecipient(email)],
     Content: {
       Body: [
         ElasticEmail.BodyPart.constructFromObject({
           ContentType: "HTML",
-          Content: `<strong>Congratulations, you have received a new request: </strong><br /> <hr /><br />Name: ${
-            name ? name : ""
-          } <br /> Phone: ${
-            phone ? phone : ""
-          } <br /> Email: ${email} <br /> Message: ${message ? message : ""}`,
+          Content: `<strong>Вітаю, ви успішно відправили заявку на консультацію: </strong><br /> <hr /><br />
+          Імя: ${name} <br /> 
+          Phone: ${phone} <br />
+          Email: ${email} <br />
+          Послуга: ${service} <br />
+          Message: ${comment ? comment : ""}`,
         }),
       ],
-      Subject: `New study request from ${name ? name : email}`,
+      Subject: `Ваша заявка на косультацію для Ольги Поліщук`,
       From: FROM_MAIL,
     },
   });
