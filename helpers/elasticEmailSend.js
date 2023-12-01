@@ -18,7 +18,7 @@ const sendDataToEmail = ({ name, email, phone, comment, service }) => {
       Body: [
         ElasticEmail.BodyPart.constructFromObject({
           ContentType: "HTML",
-          Content: `<strong>Вітаю, ви успішно відправили заявку на консультацію: </strong><br /> <hr /><br />
+          Content: `<strong>Вітаю, ви успішно відправили заявку з послугою: ${service} </strong><br /> <hr /><br />
           Імя: ${name} <br /> 
           Phone: ${phone} <br />
           Email: ${email} <br />
@@ -26,7 +26,7 @@ const sendDataToEmail = ({ name, email, phone, comment, service }) => {
           Message: ${comment ? comment : ""}`,
         }),
       ],
-      Subject: `Ваша заявка на косультацію для Ольги Поліщук`,
+      Subject: `Заявка на послугу ${service} віл Ольги Поліщук`,
       From: FROM_MAIL,
     },
   });

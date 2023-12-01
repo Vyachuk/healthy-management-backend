@@ -1,10 +1,11 @@
 const { ctrlWrapper } = require("../helpers");
 const { sendDataToEmail } = require("../helpers/elasticEmailSend");
+const { sendMsgTelegram } = require("../helpers/sendMsgTelegram");
 
 const sendData = (req, res, next) => {
-  // console.log({ ...req.body });
   sendDataToEmail({ ...req.body });
-  res.json({ message: "List was successfully sent" });
+  sendMsgTelegram({ ...req.body });
+  res.json({ message: "The application has been successfully sent" });
 };
 
 module.exports = {

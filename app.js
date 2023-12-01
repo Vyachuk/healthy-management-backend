@@ -24,4 +24,23 @@ app.use((err, req, res, next) => {
   res.status(status).json({ message });
 });
 
+//
+const TelegramBot = require("node-telegram-bot-api");
+
+require("dotenv").config();
+
+const { TELEGRAM_API_KEY } = process.env;
+
+const bot = new TelegramBot(process.env.TELEGRAM_API_KEY, {
+  polling: true,
+});
+
+bot.on("polling_error", (err) => console.log(err.data.error.message));
+
+bot.on("text", async (msg) => {
+  console.log(msg.chat.id);
+  await bot.sendMessage(msg.chat.id, msg.text);
+});
+//
+
 module.exports = app;
