@@ -9,7 +9,9 @@ const { TELEGRAM_API_KEY, TELEGRAM_CHAT_ID } = process.env;
 
 const sendMsgTelegram = async (data) => {
   const { name, email, phone, service, comment } = data;
-  const telegramMessage = `Вітаю. Вам поступила нова заявка: \nІм'я: ${name}\nEmail: ${email}\nТелефон: ${phone}\nПослуга: ${service}\nПовідомлення: ${comment}`;
+  const telegramMessage = `Вітаю. Вам поступила нова заявка: \nІм'я: ${name}\nE-mail: ${email}\nТелефон: ${phone}\nПослуга: ${service}\n${
+    comment && `Повідомлення: ${comment}`
+  }`;
 
   try {
     const { data } = await axios.post(

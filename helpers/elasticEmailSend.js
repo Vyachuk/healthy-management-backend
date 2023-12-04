@@ -20,10 +20,10 @@ const sendDataToEmail = ({ name, email, phone, comment, service }) => {
           ContentType: "HTML",
           Content: `<strong>Вітаю, ви успішно відправили заявку з послугою: ${service} </strong><br /> <hr /><br />
           Імя: ${name} <br /> 
-          Phone: ${phone} <br />
-          Email: ${email} <br />
+          Телефон: ${phone} <br />
+          E-mail: ${email} <br />
           Послуга: ${service} <br />
-          Message: ${comment ? comment : ""}`,
+          ${comment && `Повідомлення: ${comment}`}`,
         }),
       ],
       Subject: `Заявка на послугу ${service} віл Ольги Поліщук`,

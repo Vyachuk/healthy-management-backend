@@ -15,7 +15,7 @@ const validateSchema = Joi.object({
   service: Joi.string()
     .valid(...serviceVaild)
     .required(),
-  comment: Joi.string().pattern(commentRegexp),
+  comment: Joi.string().optional().allow("").max(500),
 });
 
 module.exports = {
