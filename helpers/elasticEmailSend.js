@@ -20,7 +20,7 @@ const sendDataToEmail = ({ name, email, phone, comment, service }) => {
           ContentType: "HTML",
           Content: `
           <div style="max-width: 688px; margin: 0 auto; color: black; font-family: 'Montserrat', sans-serif;">
-            <img style="width: 227px; margin-bottom: 37px" src='https://healthy-management.onrender.com/logo.png' alt="Healthy Management logo">
+            <img style="width: 227px; margin-bottom: 37px" src='https://healthy-management.onrender.com/newlogo.png' alt="Healthy Management logo">
             <p style="margin-bottom: 37px; margin-top: 0;">Доброго дня, ${name}! <br/><br/>Дякуємо, що звернулися до студії Health Management. Мене звати Ольга Поліщук, я власниця та засновниця студії, я дякую вам за довіру та запит. Ми раді допомогти вам стати кращими. Зв'яжемося з вами протягом 24 годин.<br/><br/>З повагою, </p>
 
             <div style="width: 360px;background-color: rgb(6, 33, 54); border-radius: 16px;  padding: 24px; display: flex; margin-bottom: 37px"> 
