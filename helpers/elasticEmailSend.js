@@ -30,9 +30,9 @@ const sendDataToEmail = ({ name, email, phone, comment, service }) => {
                 <p style="color: white; font-size: 12px; line-height: 16px; margin-top: 0; margin-bottom: 8px" >+380 673 160 556</p>
                 <p style="color: white; text-decoration: none; font-size: 12px; line-height: 16px; margin-top: 0;  margin-bottom: 16px" >healthymanagement.com.ua</p>
                 <div style="margin-top: 20px">
-                  <a style="margin-right: 16px" target="_blank" href="https://www.instagram.com/healthymanagement_ua/"><img style="width: 16px; height: 16px" src="https://www.edigitalagency.com.au/wp-content/uploads/new-Instagram-logo-white-glyph.png" alt="Instagram link" /></a>
-                  <a style="margin-right: 16px" target="_blank" href="https://www.facebook.com/people/Healthy-management/61551346490841/"><img style="width: 16px; height: 16px" src="https://www.edigitalagency.com.au/wp-content/uploads/facebook-icon-white-png.png" alt="Facebook link" /></a>
-                  <a target="_blank" href="https://www.linkedin.com/in/olga-polishchuk-83362140/"><img style="width: 16px; height: 16px" src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/linkedin-app-white-icon.png" alt="Linkedin link" /></a>
+                  <a style="margin-right: 16px" target="_blank" href="https://www.instagram.com/olga_healthm/"><img style="width: 16px; height: 16px" src="https://healthy-management.onrender.com/instagram.png" alt="Instagram link" /></a>
+                  <a style="margin-right: 16px" target="_blank" href="https://www.facebook.com/olga.polishchuk.14"><img style="width: 16px; height: 16px" src="https://healthy-management.onrender.com/facebook.png" alt="Facebook link" /></a>
+                  <a target="_blank" href="https://www.linkedin.com/in/olga-polishchuk-83362140/"><img style="width: 16px; height: 16px" src="https://healthy-management.onrender.com/linkedin.png" alt="Linkedin link" /></a>
               </div>
             </div>
           </div>
