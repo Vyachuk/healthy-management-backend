@@ -21,9 +21,9 @@ const sendDataToEmail = ({ name, email, phone, comment, service }) => {
           Content: `
           <div style="max-width: 688px; margin: 0 auto; color: black; font-family: 'Montserrat', sans-serif;">
             <a href="healthymanagement.com.ua"><img style="width: 227px; margin-bottom: 37px" src='https://healthy-management.onrender.com/newlogo.png' alt="Healthy Management logo"></a>
-            <p style="margin-bottom: 37px; margin-top: 0;">Доброго дня, ${name}! <br/><br/>Дякуємо, що звернулися до студії Health Management. Мене звати Ольга Поліщук, я власниця та засновниця студії, я дякую вам за довіру та запит. Ми раді допомогти вам стати кращими. Зв'яжемося з вами протягом 24 годин.<br/><br/>З повагою, </p>
+            <p style="margin-bottom: 37px; margin-top: 0;">Доброго дня, ${name}! <br/><br/>Дякуємо, що звернулися до студії Healthy Management. Мене звати Ольга Поліщук, я власниця та засновниця студії, дякую вам за довіру та запит. Ми раді допомогти вам стати кращими. Зв'яжемося з вами протягом 24 годин.<br/><br/>З повагою, </p>
 
-            <div style="width: 360px;background-color: rgb(6, 33, 54); border-radius: 16px;  padding: 24px; display: flex; margin-bottom: 37px"> 
+            <div style="width: 360px; border-radius: 16px;  padding: 24px; display: flex; margin-bottom: 37px"> 
               <img style="display: inline-block; border-radius: 16px; width: 112px; height: 112px; margin-right: 24px" src='https://healthy-management.onrender.com/olga.png' alt="Olga Polichshyk">
               <div >
                 <h2 style="margin-top: 0; color: white; font-size: 16px; font-weight: 600; line-height: 24px; margin-bottom: 8px" >Ольга Поліщук</h2>
@@ -47,7 +47,7 @@ const sendDataToEmail = ({ name, email, phone, comment, service }) => {
           </ul>`,
         }),
       ],
-      Subject: `Заявка послуги "${service}" для Ольги Поліщук`,
+      Subject: `Ваша заявка на послугу "${service}" прийнята`,
       From: FROM_MAIL,
     },
   });
