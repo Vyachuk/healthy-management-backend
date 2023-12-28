@@ -25,32 +25,33 @@ app.use((err, req, res, next) => {
   res.status(status).json({ message });
 });
 
-// TELEGRAM BOT
-// const TelegramBot = require("node-telegram-bot-api");
+TELEGRAM BOT
+const TelegramBot = require("node-telegram-bot-api");
 
-// require("dotenv").config();
+require("dotenv").config();
 
-// const { TELEGRAM_API_KEY } = process.env;
+const { TELEGRAM_API_KEY } = process.env;
 
-// const bot = new TelegramBot(process.env.TELEGRAM_API_KEY, {
-//   polling: true,
-// });
+const bot = new TelegramBot(process.env.TELEGRAM_API_KEY, {
+  polling: true,
+});
 
-// bot.on("polling_error", (err) => console.log(err.data.error.message));
+bot.on("polling_error", (err) => console.log(err.data.error.message));
 
-// bot.on("text", async (msg) => {
-//   try {
-//     if (msg.text == "/start") {
-//       await bot.sendMessage(
-//         msg.chat.id,
-//         `Вітаю, ви можете зв'язатись з Ольгою Поліщук поштою: managementhealthy@gmail.com`
-//       );
-//     } else if (msg.text == "/giveid") {
-//       await bot.sendMessage(msg.chat.id, msg.chat.id);
-//     }
-//   } catch (error) {
-//     console.log(error);
-//   }
-// });
+bot.on("text", async (msg) => {
+  try {
+    // if (msg.text == "/start") {
+    //   await bot.sendMessage(
+    //     msg.chat.id,
+    //     `Вітаю, ви можете зв'язатись з Ольгою Поліщук поштою: managementhealthy@gmail.com`
+    //   );
+  // } 
+  if (msg.text == "/giveid") {
+      await bot.sendMessage(msg.chat.id, msg.chat.id);
+    }
+  } catch (error) {
+    console.log(error);
+  }
+});
 
 module.exports = app;
