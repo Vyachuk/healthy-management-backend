@@ -25,7 +25,6 @@ app.use((err, req, res, next) => {
   res.status(status).json({ message });
 });
 
-TELEGRAM BOT
 const TelegramBot = require("node-telegram-bot-api");
 
 require("dotenv").config();
@@ -45,8 +44,8 @@ bot.on("text", async (msg) => {
     //     msg.chat.id,
     //     `Вітаю, ви можете зв'язатись з Ольгою Поліщук поштою: managementhealthy@gmail.com`
     //   );
-  // } 
-  if (msg.text == "/giveid") {
+    // }
+    if (msg.text == "/giveid") {
       await bot.sendMessage(msg.chat.id, msg.chat.id);
     }
   } catch (error) {
